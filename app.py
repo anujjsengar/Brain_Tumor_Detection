@@ -27,7 +27,8 @@ if not os.path.exists(MODEL_FILE_NAME):
 
 # Load the TensorFlow model
 model = tf.keras.models.load_model(MODEL_FILE_NAME)"""
-model=pickle.load(open('example_model.pkl','rb'))
+with open('example_model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 @app.route('/')
 def index():
