@@ -32,7 +32,7 @@ with open('example_model.pkl', 'rb') as file:
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('templates/input.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -65,7 +65,7 @@ def predict():
     # Define your class labels
     class_labels = ['Glioma', 'Meningioma', 'No Tumor', 'Pituitary']
     predicted_label = class_labels[predicted_class]
-    return render_template('result.html',status=status,label=predicted_label)
+    return render_template('templates/result.html',status=status,label=predicted_label)
 
 if __name__ == "__main__":
     app.run(debug=False,host='0.0.0.0')
